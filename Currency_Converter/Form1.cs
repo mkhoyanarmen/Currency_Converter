@@ -71,8 +71,8 @@ namespace Currency_Converter
                     break;
             }
             double converted = (double.Parse(txtFromCurrency.Text) / fromAmount) * toAmount;
-            if (fromAmount <= 1)
-                txtToCurrency.Text = converted.ToString();
+            if (int.Parse(txtFromCurrency.Text) <= 2)
+                txtToCurrency.Text = Math.Round(converted, 6).ToString();
             else
                 txtToCurrency.Text = Math.Round(converted,2).ToString();
         }
